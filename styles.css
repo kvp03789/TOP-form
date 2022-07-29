@@ -1,0 +1,63 @@
+
+
+body {
+    background-image: url("olisar_lowlight.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+input, textarea, select, button {
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+}
+
+h1 {
+    font-family: 'Saira', sans-serif;
+    color: white;
+    kerning: 2ch;
+}
+
+.line-divide {
+    position:absolute;
+    top:250px;
+}
+
+#title-container {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-top: 40px;
+    font-family: 'Saira', sans-serif;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.password-container, .name, .middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+}
+
+button {
+    margin-top: 1rem;
+}
