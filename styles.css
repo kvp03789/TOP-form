@@ -6,12 +6,27 @@ body {
     background-size: cover;
     background-position: center;
     height: 200vh;
+    width: 100%;
     margin: 0;
     padding: 0;
     /* display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start; */
+}
+
+#sub-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(60, 58, 58, 0.448);
+    height: 400px;
+    margin: 0;
+    
+}
+
+#omni-logo {
+    margin-top: 5rem;
 }
 
 #container {
@@ -22,42 +37,169 @@ body {
     margin-top: 40px;
 }
 
+#title-container {
+    position: relative;
+}
+
 .header {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
-    background-color: rgb(2, 2, 34);
+    height: 7vh;
+    width: 100%;
+    background-color: rgb(2, 2, 34); 
+    box-shadow: 0 0 10px rgba(92, 218, 240, 0.489);
+    position: relative;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.nav>ul {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 5px 2rem;
+}
+
+.nav-list-item {
+    list-style: none;
+    font-weight: bold;
+    position: relative;
+    padding: 1rem 1rem;
+    width:fit-content;
+    height:min-content;
     
 }
 
-
-
-.header-section-2 {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+.nav-list-item:hover {
+    background-color: rgba(31, 31, 108, 0.307);
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.nav-list-item::after {
+    content: '';
+    width: 0%;
+    height: 0.1rem;
+    border-radius: 2px;
+    position: absolute;
+    left: 1rem;
+    right: 0.8rem;
+    background-color: rgb(201, 237, 225);
+    transition:width 200ms ease-in;
+}
+
+.nav-list-item:hover::after, .nav-list-item:focus::after {
+    width: 80%;
+
+}
+
+.nav-list-item:hover ul, .nav-list-item:focus ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drop-list {
+    position: absolute;
+    top:4rem;
+    left: -1rem;
+    box-shadow: 0 0 10px rgba(170, 169, 169, 0.669);
+    background-color:rgba(2, 2, 34, 0.304);
+    border-radius: 5px;
+    width: 14rem;
+    padding: 1rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition:opacity 100ms ease-in-out;
 }
 
-input, textarea, select{
+.drop-item {
+    padding: 0.2rem 0.2rem;
+    border-radius: 2px;
+    transition: background-color 100ms ease-in-out;
+}
+
+.drop-item:hover, .drop-item:focus {
+    background-color: rgba(199, 219, 219, 0.302);
+}
+
+#svg-aarow {
+    width: 25px;
+    height: auto;
+    margin-top: 10px;
+    filter: invert(100%) sepia(34%) saturate(390%) hue-rotate(293deg) brightness(106%) contrast(65%) opacity(60%);
+    position: absolute;
+    visibility: hidden;
+}
+
+#svg-user {
+    width: 2rem;
+    height: 1.2rem;
+    margin-top: 10px;
+    left: 6.5rem;
+    top: 1.0rem;
+    filter: invert(100%) sepia(34%) saturate(390%) hue-rotate(293deg) brightness(106%) contrast(65%) opacity(60%);
+    position: absolute;
+    visibility: hidden;
+}
+
+.discover #svg-down {
+    width: 3rem;
+    height: 1.8rem;
+    margin-top: 10px;
+    left: 6.5rem;
+    top: 1.0rem;
+    filter: invert(100%) sepia(34%) saturate(390%) hue-rotate(293deg) brightness(106%) contrast(65%) opacity(60%);
+    position: absolute;
+    visibility: hidden; 
+}
+
+.news #svg-down{
+    width: 3rem;
+    height: 1.8rem;
+    margin-top: 10px;
+    left: 4.5rem;
+    top: 1.0rem;
+    filter: invert(100%) sepia(34%) saturate(390%) hue-rotate(293deg) brightness(106%) contrast(65%) opacity(60%);
+    position: absolute;
+    visibility: hidden;
+}
+
+.connect:hover #svg-aarow {
+    visibility: visible;
+}
+
+.account:hover #svg-user {
+    visibility: visible;
+}
+
+.news:hover #svg-down, .discover:hover #svg-down {
+    visibility: visible;
+}
+
+input[type=text], input[type=email], input[type=password], select{
+    padding: 10px, 20px;
     width: 200px;
-    height: 75px;
-    padding: 0;
+    height: 40px;
     margin: 0;
     box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 20px;
 }
+
+
 
 button {
     padding: 0;
@@ -73,6 +215,10 @@ label {
     font-size: 1.5rem;
 }
 
+button {
+    margin-top: 1rem;
+}
+
 h1 {
     font-family: 'Saira', sans-serif;
     color: white;
@@ -81,7 +227,7 @@ h1 {
 
 .line-divide {
     position:absolute;
-    top:320px;
+    top:-1rem;
 }
 
 #title-container {
@@ -97,11 +243,11 @@ form {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 4rem;
    
 }
 
-a {
+ul a {
     font-family: 'Saira', sans-serif;
     color: white;
     font-size: 1.5rem;
@@ -116,16 +262,12 @@ a {
 
 }
 
-button {
-    margin-top: 1rem;
-}
-
 label {
     position: relative;
     padding: 10px 20px;
-    margin: 20px 0;
+    margin: 20px 0 8px 0;
 }
-label:hover, a:hover {
+label:hover, li a:hover {
     text-shadow: 4px 4px 15px rgb(60, 181, 246);
     color:aquamarine;
     
@@ -146,7 +288,7 @@ label::before   {
     
 }
 
-label:hover::before  {
+label:hover::before   {
     transform: scaleY(1);
     opacity: 1;
     
@@ -167,18 +309,64 @@ label::after {
 
 label:hover::after {
     transform: scale(1);
-    
-    /* box-shadow:
-        inset 0 0 10px 5px #fff,
-        inset 0 0 20px 5px rgb(60, 181, 246),
-        inset 0 0 30px 10px #0ff; */
 }
 
-#any-games-logo {
-    width: 300px;
+
+#svg-logo {
+    flex: 1;
+    filter: invert(100%) sepia(34%) saturate(390%) hue-rotate(293deg) brightness(106%) contrast(65%) opacity(60%);
+    width: 4vw;
     height: auto;
+    margin-top: 10px;
 }
 
-input:focus {
-    
+
+.header-section:hover #svg-logo {
+    filter: invert(98%) sepia(8%) saturate(1144%) hue-rotate(305deg) brightness(109%) contrast(101%) opacity(75%);
+    transition: 100ms ease-in;
+}
+
+.header-section:hover span {
+    color:rgba(255, 255, 255, 0.785);
+    transition: 100ms ease-in;
+}
+
+
+.logo-link {
+    font-family: 'Montserrat', sans-serif;
+    color: #b6b4b4a4;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+form button {
+    height: 3rem;
+    width: 12rem;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    transition:all 200ms;
+}
+
+#login-button {
+    height: 3rem;
+    width: 100%;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0;
+    background-color:rgba(144, 218, 255, 0.876);
+    font-family: 'Saira', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.account button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

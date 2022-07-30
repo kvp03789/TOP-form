@@ -9,25 +9,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Saira:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="header">
-        <div class="header-section">
-            <img src="anygameslogocompletealt.png" id="any-games-logo" alt="">
-        </div>
-        <div class="header-section-2">
-            <ul>
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
-                <li><a href="#">Three</a></li>
-            </ul>
-        </div>
-    </div>
 
-<div id="container">    
-    <img src="omnionlinelogo.png" alt="" id="omni-logo">
-    <div id="title-container">
+        <div class="header-section">
+            
+            <a href="#" class="logo-link">
+                <img src="svglogosmall.svg" id="svg-logo" alt="">    
+            </a>
+            <a href="#" class="logo-link">
+            <span><h3>any games studio</h3></span>
+            </a>
+           
+            
+        </div>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-list-item news"><a href="#">News<img src="angle-small-down.svg" id="svg-down" alt=""></a>
+                    <ul class="drop-list">
+                        <li class="drop-item"><a href="#">Patch Notes</a></li>                     
+                        <li class="drop-item"><a href="#">Media</a></li>
+                        <li class="drop-item"><a href="#">Lore</a></li>
+                        <li class="drop-item"><a href="#">Merch</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item discover"><a href="#">Discover<img src="angle-small-down.svg" id="svg-down" alt=""></a>
+                    <ul class="drop-list">
+                        <li class="drop-item"><a href="#">Play</a></li>
+                        <li class="drop-item"><a href="#">Community</a></li>
+                        <li class="drop-item"><a href="#">Lore</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-list-item connect"><a href="#">Connect<img src="angle-small-right.svg" id="svg-aarow" alt="">  </a></li>
+                <li class="nav-list-item account"><a href="#">Account<img src="user.svg" id="svg-user" alt=""></a>
+                    <ul class="drop-list">
+                        <li class="drop-item"><a href="#"><button id="login-button">Log in</button></a></li>
+                        <li class="drop-item"><a href="#">Sign Up</a></li>
+                        <li class="drop-item"><a href="#">Support</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div id="sub-nav"><img src="omnionlinelogo.png" alt="" id="omni-logo"></div>
+<div id="container">  
+    
+    
+    <div id="title-container"> 
         <img src="line_divide_double.png" alt="" class="line-divide">
         <h1>join thousands of others.</h1>
     </div>
@@ -37,38 +72,53 @@
         <div class="name">
             <div class="label-wrap">
                 <label for="user_name">First Name*</label>
-                <input type="text" id="user_name" name="username">
+                <input type="text" id="user_name" name="username" placeholder="Your name...">
             </div>
             <div class="label-wrap">
                 <label for="user_surname">Last Name*</label>
-                <input type="text" id="user_surname" name="surname">
+                <input type="text" id="user_surname" name="surname" placeholder="Your  last name...">
             </div>
         </div>
 
         <div class="middle">
             <div class="label-wrap">
                 <label for="acc_name">User Name*</label>
-                <input type="text" id="acc_name" name="account">
+                <input type="text" id="acc_name" name="account" placeholder="Account name...">
             </div>
             <div class="label-wrap">
                 <label for="user_email">E-mail*</label>
-                <input type="email" id="user_email" name="useremail">
+                <input type="email" id="user_email" name="useremail" placeholder="E-mail...">
             </div>
         </div>
 
         <div class="password-container">
             <div class="label-wrap">
                 <label for="pwd">Password*</label>
-                <input type="password" id="pwd" name="password">
+                <input type="password" id="pwd" name="password" placeholder="6-12 characters...">
             </div>   
             <div class="label-wrap">
                 <label for="pwd">Confirm*</label>
                 <input type="password" id="pwd" name="password">
             </div>
         </div>
-
-        <button>Submit</button>
+        <div class="label-wrap">
+        <label for="region-select">Select Region*</label>
+                <select name="user_region" id="region-select">
+                    <option value="">North America</option>
+                    <option value="">South America</option>
+                    <option value="">Europe</option>
+                    <option value="">SE Asia</option>
+                    <option value="">Asia</option>
+                    <option value="">Africa</option>
+                    <option value="">Oceania</option>
+                </select>
+        </div>
+        <button id="submit">Create Account</button>
     </form>
 </div>
+
+<footer class="footer">
+
+</footer>
 </body>
 </html>
