@@ -6,21 +6,71 @@ body {
     background-size: cover;
     background-position: center;
     height: 200vh;
+    margin: 0;
+    padding: 0;
+    /* display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start; */
+}
+
+#container {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
+    margin-top: 40px;
 }
 
-input, textarea, select, button {
-    width: 150px;
+.header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(2, 2, 34);
+    
+}
+
+
+
+.header-section-2 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+input, textarea, select{
+    width: 200px;
+    height: 75px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+button {
+    padding: 0;
+    margin: 0;
+}
+
 label {
     display: block;
+    
+}
+
+.label-wrap {
+    font-size: 1.5rem;
 }
 
 h1 {
@@ -31,7 +81,7 @@ h1 {
 
 .line-divide {
     position:absolute;
-    top:250px;
+    top:320px;
 }
 
 #title-container {
@@ -46,18 +96,89 @@ form {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1rem;
+   
+}
+
+a {
+    font-family: 'Saira', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
 .password-container, .name, .middle {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: .5rem;
+    gap: 1rem;
 
 }
 
 button {
     margin-top: 1rem;
+}
+
+label {
+    position: relative;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+label:hover, a:hover {
+    text-shadow: 4px 4px 15px rgb(60, 181, 246);
+    color:aquamarine;
+    
+}
+label::before   {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+    
+}
+
+label:hover::before  {
+    transform: scaleY(1);
+    opacity: 1;
+    
+}
+
+label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    background: rgba(20, 154, 231, 0.33);
+    transition: .5s;
+    z-index: -1;
+}
+
+label:hover::after {
+    transform: scale(1);
+    
+    /* box-shadow:
+        inset 0 0 10px 5px #fff,
+        inset 0 0 20px 5px rgb(60, 181, 246),
+        inset 0 0 30px 10px #0ff; */
+}
+
+#any-games-logo {
+    width: 300px;
+    height: auto;
+}
+
+input:focus {
+    
 }
