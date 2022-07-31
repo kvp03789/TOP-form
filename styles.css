@@ -26,6 +26,7 @@ body {
     justify-content: center;
     background-color: rgba(60, 58, 58, 0.448);
     height: 400px;
+    width: 100%;
     margin: 0;
     
 }
@@ -53,8 +54,8 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 7vh;
-    width: 100vw;
-    background-color: rgb(2, 2, 34); 
+    width: 100%;
+    background-color: rgb(29, 29, 33); 
     box-shadow: 0 0 10px rgba(92, 218, 240, 0.489);
     position: relative;
     box-sizing: border-box;
@@ -339,6 +340,13 @@ label:hover::after {
     
 }
 
+#warning {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+}
 
 .header-section:hover #svg-logo {
     filter: invert(98%) sepia(8%) saturate(1144%) hue-rotate(305deg) brightness(109%) contrast(101%) opacity(75%);
@@ -406,23 +414,27 @@ input:invalid:not(:focus):not(:placeholder-shown) {
 
 
 .requirements {
+    visibility: hidden;
     position: absolute;
-    padding: 0 30px 0 50px;
+    padding: 0 0px 0 0px;
     color: #999;
     max-height: 0;
     max-width: 0;
     transition: 200ms;
     overflow: hidden;
-    color: red;
+    color: rgb(240, 255, 27);
     font-style: italic;
-    font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.924);
+    font-size: 1.2rem;
+    background-color: rgba(11, 12, 81, 0.893);
     border-radius: 5px;
+    border: 2px solid white;
+    z-index:2;
 }
 
  input:invalid:focus:not(:placeholder-shown) ~ .requirements {
-    max-height: 120px;
-    max-width: 200px;
+    visibility:visible;
+    max-height: 170px;
+    max-width: 220px;
     padding: 10px 30px 20px 50px;
 }
 
