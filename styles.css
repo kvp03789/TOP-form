@@ -245,7 +245,7 @@ h1 {
 
 .line-divide {
     position:absolute;
-    top:-1rem;
+    top:-.2rem;
 }
 
 #title-container {
@@ -428,4 +428,23 @@ input:invalid:not(:focus):not(:placeholder-shown) {
 
 input:invalid:focus:not(:placeholder-shown) {
     background-color: pink;
+}
+
+#submit {
+    background-color: rgb(2, 2, 34); 
+    border: 2px white solid;
+    color: white;
+    border-radius: 3px;
+}
+
+#submit:hover {
+    background-color: white;
+    border: 2px black solid;
+    color: rgb(2, 2, 34);
+    transform: scale(1.1);
+    box-shadow: 0 0 14px #9ecaed;
+}
+
+input:focus {
+    box-shadow: 0 0 18px #9ecaed;
 }
