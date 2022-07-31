@@ -407,8 +407,8 @@ input:valid {
 }
 
 input:invalid:not(:focus):not(:placeholder-shown) {
-    background-color: rgb(253, 208, 211);
-    /* border: 2px red solid; */
+    /* background-color: rgb(253, 208, 211); */
+    background-color: rgba(255, 255, 0, 0.613);
 }
 
 
@@ -439,7 +439,8 @@ input:invalid:not(:focus):not(:placeholder-shown) {
 }
 
 input:invalid:focus:not(:placeholder-shown) {
-    background-color: pink;
+    background-color: rgba(255, 255, 0, 0.613);
+    /* background-color: pink; */
 }
 
 #submit {
