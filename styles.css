@@ -1,4 +1,9 @@
-
+@media (max-width:920px) {
+    #svg-logo {
+        visibility: hidden;
+        position: absolute;
+    }
+}
 
 body {
     background-image: url("olisar_lowlight.jpg");
@@ -48,10 +53,13 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 7vh;
-    width: 100%;
+    width: 100vw;
     background-color: rgb(2, 2, 34); 
     box-shadow: 0 0 10px rgba(92, 218, 240, 0.489);
     position: relative;
+    box-sizing: border-box;
+    white-space: nowrap;
+    flex: 1 1 100%;
 }
 
 .header-section {
@@ -61,6 +69,10 @@ body {
 
 ul, li {
     list-style: none;
+}
+
+.nav>li {
+    flex: 1 2 auto;
 }
 
 .nav>ul {
@@ -199,25 +211,13 @@ input[type=text], input[type=email], input[type=password], select{
     font-size: 20px;
 }
 
-input:valid {
-    border: 2px solid black;
-    background: url(check.svg) white;
-    background-size: 17px;
-    background-repeat: no-repeat;
-    background-position: bottom 50% right 98%;
+
+
+.password {
+    position: relative;
 }
 
-input:invalid:not(focus):not(:placeholder-shown) {
-    background-color: rgb(253, 208, 211);
-    /* border: 2px red solid; */
-}
 
-input:invalid:focus:not(:placeholder-shown)::after {
-    content: 'Password requirement not met';
-    position: absolute;
-    height: 60px;
-    width: 200px;
-}
 
 button {
     padding: 0;
@@ -336,6 +336,7 @@ label:hover::after {
     width: 4vw;
     height: auto;
     margin-top: 10px;
+    
 }
 
 
@@ -353,7 +354,7 @@ label:hover::after {
 .logo-link {
     font-family: 'Montserrat', sans-serif;
     color: #b6b4b4a4;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
     text-decoration: none;
 }
 
@@ -389,13 +390,42 @@ button:hover {
     align-items: center;
 }
 
+input:valid {
+    border: 2px solid black;
+    background: url(check.svg) white;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: bottom 50% right 98%;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+    background-color: rgb(253, 208, 211);
+    /* border: 2px red solid; */
+}
+
+
+
 .requirements {
-    padding: 0 25px 0 40px;
+    position: absolute;
+    padding: 0 30px 0 50px;
     color: #999;
     max-height: 0;
+    max-width: 0;
     transition: 200ms;
     overflow: hidden;
     color: red;
     font-style: italic;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.924);
+    border-radius: 5px;
+}
 
+ input:invalid:focus:not(:placeholder-shown) ~ .requirements {
+    max-height: 120px;
+    max-width: 200px;
+    padding: 10px 30px 20px 50px;
+}
+
+input:invalid:focus:not(:placeholder-shown) {
+    background-color: pink;
 }
