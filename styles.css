@@ -190,7 +190,7 @@ ul, li {
 }
 
 input[type=text], input[type=email], input[type=password], select{
-    padding: 10px, 20px;
+    padding: 10px 10px 10px 25px;
     width: 200px;
     height: 40px;
     margin: 0;
@@ -199,7 +199,25 @@ input[type=text], input[type=email], input[type=password], select{
     font-size: 20px;
 }
 
+input:valid {
+    border: 2px solid black;
+    background: url(check.svg) white;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: bottom 50% right 98%;
+}
 
+input:invalid:not(focus):not(:placeholder-shown) {
+    background-color: rgb(253, 208, 211);
+    /* border: 2px red solid; */
+}
+
+input:invalid:focus:not(:placeholder-shown)::after {
+    content: 'Password requirement not met';
+    position: absolute;
+    height: 60px;
+    width: 200px;
+}
 
 button {
     padding: 0;
@@ -369,4 +387,15 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.requirements {
+    padding: 0 25px 0 40px;
+    color: #999;
+    max-height: 0;
+    transition: 200ms;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+
 }
